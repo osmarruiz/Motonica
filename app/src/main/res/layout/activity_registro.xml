@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Texto "Iniciar" -->
+    <TextView
+        android:id="@+id/textIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar"
+        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <!-- Texto "Registrarse" -->
+    <TextView
+        android:id="@+id/textRegistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textSize="32sp"
+        android:textColor="@color/blue"
+        android:layout_below="@id/textIniciar"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Botón "saltar" -->
+    <TextView
+        android:id="@+id/buttonSaltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="saltar"
+        android:backgroundTint="@color/White"
+        android:textColor="@color/black"
+        android:textSize="14sp"  />
+
+    <!-- Campo Nombre Completo -->
+    <EditText
+        android:id="@+id/editNombreCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre Completo"
+        android:layout_below="@id/textRegistrarse"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- Campo Correo -->
+    <EditText
+        android:id="@+id/editCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo"
+        android:layout_below="@id/editNombreCompleto"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        />
+
+    <!-- Campo Numero -->
+    <EditText
+        android:id="@+id/editNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numero"
+        android:layout_below="@id/editCorreo"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- Campo Contraseña -->
+    <EditText
+        android:id="@+id/editContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:layout_below="@id/editNumero"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:inputType="textPassword"/>
+
+    <!-- Campo Repetir Contraseña -->
+    <EditText
+        android:id="@+id/editRepetirContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repite contraseña"
+        android:layout_below="@id/editContrasena"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:inputType="textPassword"/>
+
+    <!-- Botón Registrarse -->
+    <Button
+        android:id="@+id/buttonRegistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:layout_below="@id/editRepetirContrasena"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@android:color/white"/>
+
+    <!-- Enlace a políticas de privacidad -->
+    <TextView
+        android:id="@+id/textPoliticasPrivacidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="políticas de privacidad"
+        android:textSize="16sp"
+        android:layout_below="@id/buttonRegistrarse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:autoLink="web"/>
+
+</RelativeLayout>
+
