@@ -13,3 +13,13 @@
 .externalNativeBuild
 .cxx
 local.properties
+.idea/deploymentTargetSelector.xml
+.tmp/
+android/
+caches/
+daemon/
+jdks/
+kotlin-profile/
+native/
+wrapper/
+
