@@ -11,15 +11,17 @@ import androidx.core.view.ViewCompat
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_logim)
+     //   enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
 
-        val button4: Button = findViewById(R.id.button4)
+//        val button4: Button = findViewById(R.id.button4)
+//
+//        button4.setOnClickListener {
+//            val intent = Intent(this, RegistroActivity::class.java)
+//            startActivity(intent)
+//        }
 
-        button4.setOnClickListener {
-            val intent = Intent(this, RegistroActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 }
 
