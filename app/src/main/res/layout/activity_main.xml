@@ -3,109 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        <Button
-            android:id="@+id/textViewLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Saltar"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="30dp"
-            />
-
-        <Button
-            android:id="@+id/botonregistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="Registrarse"
-            android:backgroundTint=""
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="130dp"
-            android:layout_marginEnd="207dp"/>
-
-        <Button
-            android:id="@+id/botoniniciar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="Registrarse"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/graytxt"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="130dp"
-            android:layout_marginEnd="207dp"//>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/correo"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="100dp"
-        />
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="@string/contra"
-        android:inputType="textPassword"
-         />
-    <Button
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olvido su contraseña?"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="507dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="80dp"
-        />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Iniciar sesion"
-        android:backgroundTint="@color/Blue"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="507dp"
-        android:layout_marginTop="30dp"/>
-
-
-    <Button
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Politica de privacidad"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="569dp" />
-
 
 
 

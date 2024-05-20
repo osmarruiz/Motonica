@@ -15,8 +15,10 @@
         <activity
             android:name=".RegistroActivity"
             android:exported="false"
-            android:label="@string/title_activity_registro"
             android:theme="@style/Theme.Motonica" />
+        <activity
+            android:name=".LogimActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

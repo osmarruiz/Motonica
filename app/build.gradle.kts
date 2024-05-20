@@ -32,10 +32,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-        viewBinding{enable = true}
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 
@@ -46,8 +42,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
