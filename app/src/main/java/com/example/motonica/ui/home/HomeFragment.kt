@@ -1,4 +1,4 @@
-package com.example.motonica
+package com.example.motonica.ui.home
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
+import com.example.motonica.R
 import com.example.motonica.network.RetrofitInstance
 import kotlinx.coroutines.launch
 
@@ -49,6 +50,7 @@ class HomeFragment : Fragment() {
                         view.findViewById<TextView>(R.id.first_name).text = it.first_name
                         view.findViewById<TextView>(R.id.email).text = it.email
                     }
+
                 } else {
                     Log.e("UserFragment", "Error en la respuesta de la API")
                 }

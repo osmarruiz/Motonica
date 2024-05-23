@@ -1,4 +1,4 @@
-package com.example.motonica
+package com.example.motonica.models
 
 data class User(
     val id: Int,
