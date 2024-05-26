@@ -1,109 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/White"
+    android:background="@color/whitebg"
     tools:context=".MainActivity">
 
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:text="saltar"
-        android:backgroundTint="@color/White"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Iniciar"
-        android:backgroundTint="@color/White"
-        android:textColor="#1E1EBA"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/whitebg"
         android:text="Registrarse"
-        android:backgroundTint="@color/White"
-        android:textColor="#D3D3D3"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:textAlignment="viewStart"
+        android:textColor="@color/graytxt"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_iniciar" />
+
+    <Button
+        android:id="@+id/button_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/whitebg"
+        android:text="Iniciar"
+        android:textAlignment="viewStart"
+        android:textColor="@color/blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
+        android:id="@+id/edit_text_email"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button4"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
         android:hint="Correo"
-        android:backgroundTint="#D3D3D3"
-        android:padding="12dp" />
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_registrarse" />
 
     <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
+        android:id="@+id/edit_text_password"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextEmail"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
-        android:hint="Contraseña"
         android:backgroundTint="#D3D3D3"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
         android:padding="12dp"
-        android:inputType="textPassword" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
 
     <TextView
-        android:id="@+id/textViewForgotPassword"
+        android:id="@+id/text_view_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="69dp"
         android:layout_marginEnd="32dp"
         android:text="Olvido su contraseña?"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
 
     <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
+        android:id="@+id/button_login"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewForgotPassword"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="#1E1EBA"
+        android:backgroundTint="@color/blue"
         android:text="Iniciar sesión"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:textColor="@color/whitetxt"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_forgot_password" />
 
     <TextView
-        android:id="@+id/textViewPrivacyPolicy"
+        android:id="@+id/text_view_privacy_policy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="290dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:text="políticas de privacidad"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>

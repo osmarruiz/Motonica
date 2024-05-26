@@ -1,129 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whitebg"
     tools:context=".MainActivity">
 
-    <!-- Texto "Iniciar" -->
-    <TextView
-        android:id="@+id/textIniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Iniciar"
-        android:textSize="24sp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
-
-    <!-- Texto "Registrarse" -->
-    <TextView
-        android:id="@+id/textRegistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrarse"
-        android:textSize="32sp"
-        android:textColor="@color/blue"
-        android:layout_below="@id/textIniciar"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Botón "saltar" -->
-    <TextView
-        android:id="@+id/buttonSaltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:text="saltar"
-        android:backgroundTint="@color/White"
-        android:textColor="@color/black"
-        android:textSize="14sp"  />
-
-    <!-- Campo Nombre Completo -->
-    <EditText
-        android:id="@+id/editNombreCompleto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre Completo"
-        android:layout_below="@id/textRegistrarse"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Correo -->
-    <EditText
-        android:id="@+id/editCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:layout_below="@id/editNombreCompleto"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        />
-
-    <!-- Campo Numero -->
-    <EditText
-        android:id="@+id/editNumero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Numero"
-        android:layout_below="@id/editCorreo"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <!-- Campo Contraseña -->
-    <EditText
-        android:id="@+id/editContrasena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:layout_below="@id/editNumero"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:inputType="textPassword"/>
-
-    <!-- Campo Repetir Contraseña -->
-    <EditText
-        android:id="@+id/editRepetirContrasena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Repite contraseña"
-        android:layout_below="@id/editContrasena"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:inputType="textPassword"/>
-
-    <!-- Botón Registrarse -->
     <Button
-        android:id="@+id/buttonRegistrarse"
+        android:id="@+id/button_registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/whitebg"
         android:text="Registrarse"
-        android:layout_below="@id/editRepetirContrasena"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blue"
-        android:textColor="@android:color/white"/>
+        android:textAlignment="viewStart"
+        android:textColor="@color/blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_iniciar" />
 
-    <!-- Enlace a políticas de privacidad -->
-    <TextView
-        android:id="@+id/textPoliticasPrivacidad"
+    <Button
+        android:id="@+id/button_iniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="políticas de privacidad"
-        android:textSize="16sp"
-        android:layout_below="@id/buttonRegistrarse"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:autoLink="web"/>
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/whitebg"
+        android:text="Iniciar"
+        android:textAlignment="viewStart"
+        android:textColor="@color/graytxt"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/edit_text_nombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Nombre"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_registrarse" />
+
+    <EditText
+        android:id="@+id/edit_text_apellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Apellido"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_nombre" />
+
+    <EditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Correo"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_apellido" />
+
+    <EditText
+        android:id="@+id/edit_text_numero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Número de teléfono"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+
+    <EditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_numero" />
+
+    <EditText
+        android:id="@+id/edit_text_confirm_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#D3D3D3"
+        android:hint="Repite Contraseña"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+
+    <TextView
+        android:id="@+id/text_view_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="Olvido su contraseña?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_confirm_password" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/blue"
+        android:text="Registrarse"
+        android:textColor="@color/whitetxt"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_forgot_password" />
+
+    <TextView
+        android:id="@+id/text_view_privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="políticas de privacidad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 

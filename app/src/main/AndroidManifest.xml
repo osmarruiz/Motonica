@@ -17,10 +17,10 @@
             android:exported="false"
             android:theme="@style/Theme.Motonica" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:theme="@style/Theme.Motonica"
             android:exported="true">
             <intent-filter>

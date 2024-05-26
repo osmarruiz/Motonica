@@ -1,4 +1,6 @@
 package com.example.motonica.network
+
+
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -7,7 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
     private const val BASE_URL = "https://moto-back-end-78da4d159a54.herokuapp.com"
-    private const val TOKEN = "tu_token_aqui"
+    private var token: String = ""
+
+    fun setToken(newToken: String) {
+        val token = newToken
+    }
 
     private val retrofit by lazy {
         Retrofit.Builder()
@@ -24,11 +30,16 @@ object RetrofitInstance {
     val motorcycleService: MotorcycleService by lazy {
         retrofit.create(MotorcycleService::class.java)
     }
+    val loginService: LoginService by lazy {
+        retrofit.create(LoginService::class.java)
+    }
     private fun getOkHttpClient(): OkHttpClient {
         val tokenInterceptor = Interceptor { chain ->
-            val request: Request = chain.request().newBuilder()
-                .addHeader("Authorization", "Bearer $TOKEN")
-                .build()
+            val requestBuilder = chain.request().newBuilder()
+            if (token.isNotEmpty()) {
+                requestBuilder.addHeader("Authorization", "Bearer $token")
+            }
+            val request: Request = requestBuilder.build()
             chain.proceed(request)
         }
 
@@ -36,4 +47,6 @@ object RetrofitInstance {
             .addInterceptor(tokenInterceptor)
             .build()
     }
+
+
 }
