@@ -6,28 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.motonica.R
-import com.example.motonica.network.RetrofitInstance
-import kotlinx.coroutines.launch
-
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+import com.example.motonica.adapter.MotorcycleAdapter
+import com.example.motonica.models.Motorcycle
 
 class HomeFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var motorcycleAdapter: MotorcycleAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,35 +29,21 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Hacer la petición a la API
-        lifecycleScope.launch {
-            try {
-                val response = RetrofitInstance.api.getUser(1)
-                if (response.isSuccessful) {
-                    val user = response.body()
-                    // Actualizar UI con los datos del usuario
-                    user?.let {
-                        view.findViewById<TextView>(R.id.first_name).text = it.first_name
-                        view.findViewById<TextView>(R.id.email).text = it.email
-                    }
 
-                } else {
-                    Log.e("UserFragment", "Error en la respuesta de la API")
-                }
-            } catch (e: Exception) {
-                Log.e("UserFragment", "Excepción al hacer la petición", e)
-            }
+        recyclerView = view.findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Iniciar el adaptador con una lista vacía al principio
+        motorcycleAdapter = MotorcycleAdapter(emptyList())
+        recyclerView.adapter = motorcycleAdapter
+
+        // Configurar el ViewModel
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+        // Observar los datos del ViewModel
+        homeViewModel.motorcycles.observe(viewLifecycleOwner) { motorcycles ->
+            motorcycleAdapter = MotorcycleAdapter(motorcycles)
+            recyclerView.adapter = motorcycleAdapter
         }
-    }
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
