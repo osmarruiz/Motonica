@@ -11,9 +11,7 @@ object RetrofitInstance {
     private const val BASE_URL = "https://moto-back-end-78da4d159a54.herokuapp.com"
     private var token: String = ""
 
-    fun setToken(newToken: String) {
-        val token = newToken
-    }
+
 
     private val retrofit by lazy {
         Retrofit.Builder()
@@ -46,6 +44,10 @@ object RetrofitInstance {
         return OkHttpClient.Builder()
             .addInterceptor(tokenInterceptor)
             .build()
+    }
+
+    fun updateToken(newToken: String) {
+        token = newToken
     }
 
 

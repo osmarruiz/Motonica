@@ -10,18 +10,17 @@ import com.example.motonica.network.RetrofitInstance
 import android.util.Log
 
 class HomeViewModel : ViewModel() {
-
     private val _motorcycles = MutableLiveData<List<Motorcycle>>()
     val motorcycles: LiveData<List<Motorcycle>> get() = _motorcycles
 
     init {
-        fetchMotorcycles()
+        fetchMotorcycles(2)
     }
 
-    private fun fetchMotorcycles() {
+    private fun fetchMotorcycles(page: Int) {
         viewModelScope.launch {
             try {
-                val response = RetrofitInstance.motorcycleService.getMotorcycles() // Obtener todas las motocicletas
+                val response = RetrofitInstance.motorcycleService.getMotorcycles(page) // Obtener todas las motocicletas
                 if (response.isSuccessful) {
                     val motorcycles = response.body()
                     motorcycles?.let {

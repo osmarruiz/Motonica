@@ -42,8 +42,9 @@ class HomeFragment : Fragment() {
 
         // Observar los datos del ViewModel
         homeViewModel.motorcycles.observe(viewLifecycleOwner) { motorcycles ->
-            motorcycleAdapter = MotorcycleAdapter(motorcycles)
-            recyclerView.adapter = motorcycleAdapter
+            motorcycles?.let {
+                motorcycleAdapter.updateMotorcycles(it)
+            }
         }
     }
 }

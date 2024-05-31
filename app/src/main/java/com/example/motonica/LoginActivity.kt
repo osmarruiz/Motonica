@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.motonica.network.LoginRequest
 import com.example.motonica.network.LoginResponse
 import com.example.motonica.network.RetrofitInstance
+import com.example.motonica.util.TokenManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,8 +46,8 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
-                        saveToken(loginResponse.token)
-                        // Navegar a otra actividad si es necesario
+                        TokenManager.setToken(this@LoginActivity, loginResponse.token)
+
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
@@ -62,11 +63,6 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun saveToken(token: String) {
-        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("token", token)
-        editor.apply()
-    }
+
 
 }

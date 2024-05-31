@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.motonica.databinding.ActivityMainBinding
 import com.example.motonica.network.RetrofitInstance
+import com.example.motonica.util.TokenManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.concurrent.thread
 
@@ -22,10 +23,15 @@ class MainActivity : AppCompatActivity() {
         Thread.sleep(2000)
         super.onCreate(savedInstanceState)
 
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //manejador del token
+        val token = TokenManager.getToken(this)
+        if (token.isNotEmpty()) {
+            RetrofitInstance.updateToken(token)
+        }
+
 
         val navView: BottomNavigationView = binding.navView
         setSupportActionBar(findViewById(R.id.toolbar))
