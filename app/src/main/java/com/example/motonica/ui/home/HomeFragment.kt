@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.motonica.R
@@ -31,16 +32,13 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        // Iniciar el adaptador con una lista vacía al principio
         motorcycleAdapter = MotorcycleAdapter(emptyList())
         recyclerView.adapter = motorcycleAdapter
 
-        // Configurar el ViewModel
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        // Observar los datos del ViewModel
         homeViewModel.motorcycles.observe(viewLifecycleOwner) { motorcycles ->
             motorcycles?.let {
                 motorcycleAdapter.updateMotorcycles(it)
