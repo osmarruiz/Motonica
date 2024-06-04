@@ -26,11 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //manejador del token
-        val token = TokenManager.getToken(this)
-        if (token.isNotEmpty()) {
-            RetrofitInstance.updateToken(token)
-        }
+
 
 
         val navView: BottomNavigationView = binding.navView

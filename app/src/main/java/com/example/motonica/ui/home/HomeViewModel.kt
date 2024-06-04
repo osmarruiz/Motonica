@@ -14,7 +14,7 @@ class HomeViewModel : ViewModel() {
     val motorcycles: LiveData<List<Motorcycle>> get() = _motorcycles
 
     init {
-        fetchMotorcycles(2)
+        fetchMotorcycles(1)
     }
 
     private fun fetchMotorcycles(page: Int) {

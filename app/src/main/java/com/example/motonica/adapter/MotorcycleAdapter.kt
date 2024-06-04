@@ -3,6 +3,7 @@ package com.example.motonica.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.example.motonica.models.Motorcycle
@@ -11,8 +12,8 @@ import com.example.motonica.R
 class MotorcycleAdapter(private var motorcycleList: List<Motorcycle>) : RecyclerView.Adapter<MotorcycleAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        // Aquí puedes inicializar las vistas de tu layout
-        // Ejemplo: val textView: TextView = itemView.findViewById(R.id.text_view)
+        val txtBrand: TextView = itemView.findViewById(R.id.txtBrand)
+        val txtPrice: TextView = itemView.findViewById(R.id.txtPrice)
     }
 
     override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,8 +27,8 @@ class MotorcycleAdapter(private var motorcycleList: List<Motorcycle>) : Recycler
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val motorcycle = motorcycleList[position]
-        // Aquí puedes vincular los datos de tu objeto motorcycle a las vistas
-        // Ejemplo: holder.textView.text = motorcycle.name
+        holder.txtBrand.text = motorcycle.brand
+        holder.txtPrice.text = "$ ${motorcycle.price}"
     }
 
     fun updateMotorcycles(newMotorcycleList: List<Motorcycle>) {

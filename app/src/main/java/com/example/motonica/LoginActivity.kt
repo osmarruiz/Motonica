@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
                         TokenManager.setToken(this@LoginActivity, loginResponse.token)
-
+                        RetrofitInstance.updateToken(loginResponse.token)
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
