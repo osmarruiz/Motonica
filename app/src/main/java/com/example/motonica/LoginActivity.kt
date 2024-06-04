@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                } else {
+                } else { 
                     Toast.makeText(this@LoginActivity, "Login failed", Toast.LENGTH_SHORT).show()
                 }
             }

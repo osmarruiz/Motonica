@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://moto-back-end-78da4d159a54.herokuapp.com"
+    private const val BASE_URL = "https://moto-back-end-f890464e841c.herokuapp.com"
     private var token: String = ""
 
 

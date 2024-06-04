@@ -6,10 +6,7 @@
         android:icon="@drawable/baseline_home_24"
         android:title="@string/inicio" />
 
-    <item
-        android:id="@+id/navigation_favorites"
-        android:icon="@drawable/favorites"
-        android:title="@string/favoritos" />
+
 
     <item
         android:id="@+id/navigation_add"
